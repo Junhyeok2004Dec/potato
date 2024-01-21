@@ -7,6 +7,9 @@ public interface Information {
 	String GAME_VER = "Windows 95";
 
 	Color backGroundColor = Color.red;
+	Color backGroundColor2 = Color.blue;
 	Color normalTextColor = Color.yellow;
 	Color specialTextColor = Color.cyan;
+	Color listColor = Color.green;
+
 }

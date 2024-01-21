@@ -4,6 +4,8 @@ package main;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import static javax.swing.SwingConstants.CENTER;
 
@@ -14,7 +16,8 @@ public class Application {
 	JPanel titlePanel, startBtnPanel;
 	JLabel titleLabel, startLabel;
 	Font titleFont = new Font(Font.SERIF, Font.BOLD, 96);
-	Font mediumFont = new Font(Font.SERIF, Font.BOLD, 46);
+	Font mediumFont = new Font(Font.SERIF, Font.BOLD, 40);
+	Font smallFont = new Font(Font.SERIF, Font.PLAIN, 20);
 
 	JButton startButton;
 
@@ -100,6 +103,33 @@ public class Application {
 
 		Panel();
 
+	}
+
+	public class TitleScreenHandler implements ActionListener {
+
+		GameScreen gs;
+		/**
+		 * Invoked when an action occurs.
+		 *
+		 * @param e the event to be processed
+		 */
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			window.setVisible(false);
+			gs = new GameScreen();
+			gs.createScreen();
+		}
+
+	}
+
+	public void setFontForAllButtons(Container container, Font font) {
+		for (Component component : container.getComponents()) {
+			if (component instanceof JButton) {
+				((JButton) component).setFont(font);
+			} else if (component instanceof Container) {
+				setFontForAllButtons((Container) component, font);
+			}
+		}
 	}
 
 }
