@@ -13,7 +13,7 @@ public class GameScreen extends Application {
 
 	private JButton choice1, choice2, choice3, choice4, choice5;
 
-	private JLabel hpLabel;
+	private JLabel hpLabel, weapon, i;
 
 
 
@@ -97,6 +97,7 @@ public class GameScreen extends Application {
 		hpLabel.setFont(super.smallFont);
 		hpLabel.setForeground(Color.black);
 		playerpanel.add(hpLabel);
+
 
 
 	}
